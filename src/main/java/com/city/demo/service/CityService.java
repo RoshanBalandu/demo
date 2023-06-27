@@ -16,11 +16,11 @@ public class CityService {
     }
 
     public CityEntity getCity(int id) {
-        return  cityRepository.find
+        return  cityRepository.findById(id).get();
     }
 
     public String deleteCity(int id) {
-          cityRepository.delete(id);
+          cityRepository.deleteById(id);
         return "entry deleted "+id;
     }
 
@@ -30,7 +30,7 @@ public class CityService {
     }
 
     public String deleteAllCity() {
-        cityRepository.delete(id);
+        cityRepository.deleteAll();
         return "All entry deleted ";
     }
 }
