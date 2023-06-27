@@ -14,4 +14,18 @@ public class CityService {
     public CityEntity add(CityEntity city) {
         return cityRepository.save(city);
     }
+
+    public CityEntity getcity(int id) {
+        return  cityRepository.find
+    }
+
+    public String deletecity(int id) {
+          cityRepository.delete(id);
+        return "entry deleted "+id;
+    }
+
+    public CityEntity updatecity(int id,CityEntity city) {
+        city.setId(id);
+      return   cityRepository.save(city);
+    }
 }
