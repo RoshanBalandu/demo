@@ -14,21 +14,25 @@ public class CityController {
     private CityService cityService;
 
     @PostMapping("/")
-    public CityEntity addcity(@RequestBody CityEntity city){
+    public CityEntity addCity(@RequestBody CityEntity city){
         return cityService.add(city);
     }
 
     @GetMapping("/{id}")
-    public  CityEntity getcity(@PathVariable int id){
-     return    cityService.getcity(id);
+    public  CityEntity getCity(@PathVariable int id){
+     return    cityService.getCity(id);
     }
 
     @PutMapping("/{id}")
     public  CityEntity updateCity(@RequestBody CityEntity city,@PathVariable int id){
-        return  cityService.updatecity(id,city);
+        return  cityService.updateCity(id,city);
     }
     @DeleteMapping("/{id}")
-    public  String deletecity(@PathVariable int id){
-      return   cityService.deletecity(id);
+    public  String deleteCity(@PathVariable int id){
+      return   cityService.deleteCity(id);
+ }
+ @DeleteMapping("/")
+    public  String deleteAllCity(){
+      return   cityService.deleteAllCity();
  }
 }

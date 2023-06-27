@@ -15,17 +15,22 @@ public class CityService {
         return cityRepository.save(city);
     }
 
-    public CityEntity getcity(int id) {
+    public CityEntity getCity(int id) {
         return  cityRepository.find
     }
 
-    public String deletecity(int id) {
+    public String deleteCity(int id) {
           cityRepository.delete(id);
         return "entry deleted "+id;
     }
 
-    public CityEntity updatecity(int id,CityEntity city) {
+    public CityEntity updateCity(int id,CityEntity city) {
         city.setId(id);
       return   cityRepository.save(city);
+    }
+
+    public String deleteAllCity() {
+        cityRepository.delete(id);
+        return "All entry deleted ";
     }
 }
